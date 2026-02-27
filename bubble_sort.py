@@ -10,6 +10,5 @@ def bubble_sort(arr):
         if sorted:
             break
     return arr
-w
 arr = [64, 34, 25, 1, 22, 11, 90]
 print("Sorted array is:", bubble_sort(arr))
