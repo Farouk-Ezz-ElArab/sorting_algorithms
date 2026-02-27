@@ -8,6 +8,3 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr
-
-arr = [12, 11, 13, 5, 6]
-print("Sorted array is:", insertion_sort(arr))
