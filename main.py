@@ -1,34 +1,36 @@
+import copy
 import random
 import time
-import time
-import insertion_sort
-import selection_sort
-import bubble_sort
+from bubble_sort import bubble_sort
+from selection_sort import selection_sort
+from insertion_sort import insertion_sort
 
+sizes = [2500, 5000, 10000, 15000, 25000]
 
-arr = [1,2,13,9,12]
-arr1 = [9,5,8,3,5]
-arr2 = [12,4,56,78,34]
-start = time.time()
-selection_sort.selection_sort(arr)
-end = time.time()
+for size in sizes:
 
-print(arr)
+    print(f"\nArray Size: {size}")
 
-print(f"runtime of selection is {(end - start) * 1000} milliseconds")
+    original = []
+    for i in range(size):
+        num = random.randint(0, 100000)
+        original.append(num)
 
-start1 = time.time()
-insertion_sort.insertion_sort(arr1)
-end1 = time.time()
+    arr1 = copy.deepcopy(original)
+    start = time.time()
+    bubble_sort(arr1)
+    end = time.time()
+    print("Bubble:", (end - start) * 1000, "ms")
 
-print(arr1)
+    arr2 = copy.deepcopy(original)
+    start = time.time()
+    selection_sort(arr2)
+    end = time.time()
+    print("Selection:", (end - start) * 1000, "ms")
 
-print(f"runtime of insersion is {(end1 - start1) * 1000} milliseconds")
+    arr3 = copy.deepcopy(original)
+    start = time.time()
+    insertion_sort(arr3)
+    end = time.time()
+    print("Insertion:", (end - start) * 1000, "ms")
 
-start2 = time.time()
-bubble_sort.bubble_sort(arr2)
-end2 = time.time()
-
-print(arr2)
-
-print(f"runtime of bubble is {(end2 - start2) * 1000} milliseconds")
