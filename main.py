@@ -5,7 +5,7 @@ from bubble_sort import bubble_sort
 from selection_sort import selection_sort
 from insertion_sort import insertion_sort
 
-sizes = [2500, 5000, 10000, 15000, 25000]
+sizes = [2500, 5000, 10000, 15000, 20000, 25000]
 
 for size in sizes:
 
@@ -33,4 +33,3 @@ for size in sizes:
     insertion_sort(arr3)
     end = time.time()
     print("Insertion:", (end - start) * 1000, "ms")
-
