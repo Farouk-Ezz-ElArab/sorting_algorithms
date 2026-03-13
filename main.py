@@ -33,3 +33,5 @@ for size in sizes:
     insertion_sort(arr3)
     end = time.time()
     print("Insertion:", (end - start) * 1000, "ms")
+
+    
