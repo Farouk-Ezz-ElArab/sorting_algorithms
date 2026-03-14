@@ -1,6 +1,6 @@
 import copy
 import random
-import time
+import timeit
 from bubble_sort import bubble_sort
 from selection_sort import selection_sort
 from insertion_sort import insertion_sort
@@ -17,21 +17,13 @@ for size in sizes:
         original.append(num)
 
     arr1 = copy.deepcopy(original)
-    start = time.time()
-    bubble_sort(arr1)
-    end = time.time()
-    print("Bubble:", (end - start) * 1000, "ms")
+    time_bubble = timeit.timeit(lambda: bubble_sort(arr1), number=1)
+    print("Bubble:", time_bubble * 1000, "ms")
 
     arr2 = copy.deepcopy(original)
-    start = time.time()
-    selection_sort(arr2)
-    end = time.time()
-    print("Selection:", (end - start) * 1000, "ms")
+    time_selection = timeit.timeit(lambda: selection_sort(arr2), number=1)
+    print("Selection:", time_selection * 1000, "ms")
 
     arr3 = copy.deepcopy(original)
-    start = time.time()
-    insertion_sort(arr3)
-    end = time.time()
-    print("Insertion:", (end - start) * 1000, "ms")
-
-    
+    time_insertion = timeit.timeit(lambda: insertion_sort(arr3), number=1)
+    print("Insertion:", time_insertion * 1000, "ms")
