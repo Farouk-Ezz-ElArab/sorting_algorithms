@@ -15,3 +15,5 @@ def kth_smallest(arr, k):
             high = pivot_index - 1
         else:
             low = pivot_index + 1
+
+    return -1

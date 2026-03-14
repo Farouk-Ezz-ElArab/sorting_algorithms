@@ -1,4 +1,8 @@
+import random
+
 def partition(arr, low, high):
+    random_index = random.randint(low, high)
+    arr[random_index], arr[high] = arr[high], arr[random_index]
     pivot = arr[high]
     i = low - 1
 
